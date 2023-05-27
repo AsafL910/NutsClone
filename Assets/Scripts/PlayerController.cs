@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed = 100f;
     public GameManager gameManager;
 
-public float deadzone = 0.1f;
     public float rotationSmoothing = 10f;
     void Start()
     {
@@ -30,10 +29,15 @@ public float deadzone = 0.1f;
         transform.rotation = Quaternion.Lerp(transform.rotation,target, rotationSmoothing * Time.deltaTime);
     }
 
-    void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.CompareTag("Branch"))
+    void OnTriggerEnter(Collider other) {
+        if (other.CompareTag("Branch"))
         {
+            //play hurt animation and sound
             gameManager.playerHp--;
         }
+        // if (collision.gameObject.CompareTag("Coin"))
+        // {
+             //disable coin and add it to the player total
+        // }
     }
 }

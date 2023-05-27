@@ -11,8 +11,12 @@ public class Branch : MonoBehaviour
         rb.velocity = Vector3.down * speed;
     }
 
-    private void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.CompareTag("Despawn")) {
+    private void OnTriggerEnter(Collider other) {
+        if (other.CompareTag("Despawn")) {
+            Destroy(gameObject);
+        }
+        if (other.CompareTag("Player")){
+            //Play destroy animation
             Destroy(gameObject);
         }
     }
