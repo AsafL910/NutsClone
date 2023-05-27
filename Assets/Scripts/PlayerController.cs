@@ -15,6 +15,7 @@ public float deadzone = 0.1f;
     public float rotationSmoothing = 10f;
     void Start()
     {
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
         gameObject.transform.position = tree.transform.position + Vector3.right * (tree.GetComponent<CapsuleCollider>().radius);
     }
 
@@ -33,7 +34,6 @@ public float deadzone = 0.1f;
         Gizmos.DrawLine(Vector3.zero, playerVelocity);
         Gizmos.color = Color.red;
         Gizmos.DrawLine(Vector3.zero, playerRotation);
-
     }
 }
 
