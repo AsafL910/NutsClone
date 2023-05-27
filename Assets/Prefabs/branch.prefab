@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6687696516618013650}
   m_Layer: 0
   m_Name: branch
-  m_TagString: Untagged
+  m_TagString: Branch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 14.01, y: 293.78, z: 90}
 --- !u!33 &6687696516618013654
 MeshFilter:

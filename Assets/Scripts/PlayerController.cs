@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 playerRotation;
     public float turningSpeed = 400f;
     public float rotationSpeed = 100f;
+    public GameManager gameManager;
 
 public float deadzone = 0.1f;
     public float rotationSmoothing = 10f;
@@ -29,19 +30,10 @@ public float deadzone = 0.1f;
         transform.rotation = Quaternion.Lerp(transform.rotation,target, rotationSmoothing * Time.deltaTime);
     }
 
-    void OnDrawGizmos() {
-        Gizmos.color = Color.blue;
-        Gizmos.DrawLine(Vector3.zero, playerVelocity);
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(Vector3.zero, playerRotation);
+    void OnCollisionEnter(Collision collision) {
+        if (collision.gameObject.CompareTag("Branch"))
+        {
+            gameManager.playerHp--;
+        }
     }
 }
-
-            // playerRotation = new Vector3(gameObject.transform.position.x - tree.transform.position.x, 0f, gameObject.transform.position.z - tree.transform.position.z);
-            // playerVelocity = new Vector3(-playerRotation.z, 0f, playerRotation.x);
-        // if (input != 0) {
-        //     rb.position += playerVelocity;
-        // }
-        // else {
-        //     rb.velocity = Vector3.zero;
-        // }

@@ -5,10 +5,18 @@ public class GameManager : MonoBehaviour
 {
     public GameObject prefabToSpawn;
     public float spawnInterval = 1.0f;
+    public int playerHp = 3;
 
     void Start()
     {
         StartCoroutine(SpawnObjects());
+    }
+
+    void Update() {
+        if (playerHp <= 0) {
+            Debug.Log("Game Over!");
+            //SceneManager.
+        }
     }
 
     private IEnumerator SpawnObjects()
