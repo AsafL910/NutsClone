@@ -6,13 +6,13 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
 
     public GameObject tree;
-    private Vector3 playerVelocity;
     private Vector3 playerRotation;
     public float turningSpeed = 400f;
     public float rotationSpeed = 100f;
     public GameManager gameManager;
 
     public float rotationSmoothing = 10f;
+    
     void Start()
     {
         rb.constraints = RigidbodyConstraints.FreezeRotation;
