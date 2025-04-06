@@ -37,7 +37,6 @@ public class GameManager : MonoBehaviour
         }
 
         totalDistance += climbSpeed * Time.deltaTime;
-        Debug.Log("Distance Traveled: " + totalDistance);
 
         if (climbSpeed < maxClimbSpeed)
         {
