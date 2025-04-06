@@ -1,30 +1,34 @@
 using System.Collections;
 using UnityEngine;
 
-public class Spawner : MonoBehaviour
+public abstract class Spawner : MonoBehaviour
 {
-    public GameObject prefabToSpawn;
-    public GameObject obstaclePrefab;
     public float spawnDistance = 1.0f;
-    public Vector3 spawnOffset;
-    public float angle = 10;
-    public float rotationSpeed;
 
-    // Start is called before the first frame update
-    void Start()
+    [Tooltip("Where to spawn relative to this gameObject.")]
+    public Vector3 spawnOffset;
+    public float angle = 10f;
+    public float rotationSpeed = 1f;
+
+    protected virtual void Start()
     {
-        StartCoroutine(SpawnObjects());
+        StartCoroutine(SpawnLoop());
     }
 
-    private IEnumerator SpawnObjects()
-{
-    while (true)
+    private IEnumerator SpawnLoop()
+    {
+        while (true)
+        {
+            Spawn();
+            yield return new WaitForSeconds(spawnDistance / GameManager.Instance.climbSpeed);
+        }
+    }
+
+    protected virtual void Spawn()
     {
         Transform spawnPoint = transform;
-        spawnPoint.RotateAround(Vector3.zero ,Vector3.up, rotationSpeed * Time.deltaTime * angle);
-        Instantiate(prefabToSpawn, spawnPoint.position + spawnOffset, Quaternion.Euler(0,90,90));
-        GameObject obstacle = Instantiate(obstaclePrefab, spawnOffset, Quaternion.Euler(spawnPoint.position));
-        yield return new WaitForSeconds(spawnDistance/GameManager.Instance.climbSpeed);
+        spawnPoint.RotateAround(Vector3.zero, Vector3.up, rotationSpeed * Time.deltaTime * angle);
+        PerformSpawn(spawnPoint);
     }
-}
+    protected abstract void PerformSpawn(Transform spawnPoint);
 }
