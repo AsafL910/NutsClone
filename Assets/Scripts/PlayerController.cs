@@ -6,9 +6,9 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
 
     public GameObject tree;
-    private Vector3 playerRotation;
     public float turningSpeed = 400f;
-    public float rotationSpeed = 100f;
+    [Tooltip("Max rotation to each side in degrees")]
+    public float rotationSpeed = 70f;
     public GameManager gameManager;
 
     public float rotationSmoothing = 10f;
@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb.constraints = RigidbodyConstraints.FreezeRotation;
-        gameObject.transform.position = tree.transform.position + Vector3.right * (tree.GetComponent<CapsuleCollider>().radius);
+        gameObject.transform.position = tree.transform.position + Vector3.right * tree.GetComponent<CapsuleCollider>().radius;
     }
 
     void Update()
@@ -35,9 +35,5 @@ public class PlayerController : MonoBehaviour
             //play hurt animation and sound
             gameManager.playerHp--;
         }
-        // if (collision.gameObject.CompareTag("Coin"))
-        // {
-             //disable coin and add it to the player total
-        // }
     }
 }

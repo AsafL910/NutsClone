@@ -19,13 +19,13 @@ public class Coin : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Despawn"))
+        if (other.CompareTag("Despawn") || other.CompareTag("Branch"))
         {
             Destroy(gameObject);
         }
         if (other.CompareTag("Player"))
         {
-            //Play destroy animation
+            GameManager.Instance.totalCoins += value;
             Destroy(gameObject);
         }
     }
