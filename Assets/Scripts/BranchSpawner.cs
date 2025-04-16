@@ -4,12 +4,11 @@ public class BranchSpawner : Spawner
 {
     public GameObject[] branchPrefabs;
 
-    protected override void PerformSpawn(Transform spawnPoint)
+    protected override void PerformSpawn(Transform spawnPoint, float? activeTimeSeconds = null)
     {
         var prefab = branchPrefabs[Random.Range(0, branchPrefabs.Length)];
         Vector3 spawnPos = spawnPoint.position + spawnOffset;
         float yDegree = Random.Range(0, 360);
-        Debug.Log("y:" + yDegree);
         Instantiate(prefab, spawnPos, Quaternion.Euler(0, yDegree, 90));
     }
 }
