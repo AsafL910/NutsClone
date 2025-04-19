@@ -6,6 +6,6 @@ public class CoinSpawner : Spawner
 
     protected override void PerformSpawn(Transform spawnPoint)
     {
-        Instantiate(coinPrefab, spawnPoint.position + spawnOffset, Quaternion.Euler(0, 90, 90));
+        Instantiate(coinPrefab, spawnPoint.position, Quaternion.Euler(0, 90, 90));
     }
 }

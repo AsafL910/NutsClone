@@ -6,12 +6,6 @@ public class Coin : MonoBehaviour
 
     public int value;
 
-    void Start()
-    {
-        // rb.velocity = Vector3.down * speed;
-    }
-
-
     void Update()
     {
         rb.velocity = Vector3.down * GameManager.Instance.climbSpeed;

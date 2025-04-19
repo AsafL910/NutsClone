@@ -505,6 +505,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1113466062}
   - component: {fileID: 1113466061}
+  - component: {fileID: 1113466063}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -545,6 +546,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1113466063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113466060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172f21177dccf59418279099b3b5f9c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levels:
+  - {fileID: 7891526417962984993, guid: 777526d83b6f56a4ba199d490f1b812b, type: 3}
+  - {fileID: 1986000829930887172, guid: 79470086ef8e3244286bccd214cc1b73, type: 3}
 --- !u!1 &1292704890
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,106 +792,3 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!1 &1816656484
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1816656485}
-  - component: {fileID: 1816656486}
-  m_Layer: 0
-  m_Name: BranchSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1816656485
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1816656484}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1816656486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1816656484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adffcc7ab0cf28b44a6f939fc3f2ed36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnDistance: 5
-  spawnOffset: {x: 0, y: 15, z: 0}
-  rotationSpeed: 1
-  branchPrefabs:
-  - {fileID: 77457895928501687, guid: b652c3575a2bee7488e70518d41af3c4, type: 3}
-  - {fileID: 77457895928501687, guid: b652c3575a2bee7488e70518d41af3c4, type: 3}
-  - {fileID: 77457895928501687, guid: b652c3575a2bee7488e70518d41af3c4, type: 3}
-  - {fileID: 2850440528988781667, guid: 8cb1a024531be2a4e99432fd72fa47c3, type: 3}
-  - {fileID: 7645227085584917808, guid: 9d4af01956ff1914ba332860aa1f2586, type: 3}
-  - {fileID: 7793857843936637033, guid: 48f3e5a3410843b4889e399935dfa06e, type: 3}
---- !u!1 &2041232534
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2041232536}
-  - component: {fileID: 2041232535}
-  m_Layer: 0
-  m_Name: CoinSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2041232535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2041232534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75ddfec5593b7f24a8fbd7fc5253dec7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnDistance: 1
-  spawnOffset: {x: 0, y: 6, z: 0}
-  rotationSpeed: 1000
-  coinPrefab: {fileID: 1811269357327169621, guid: 89471e20b9fa359499af2089e2e628c8,
-    type: 3}
---- !u!4 &2041232536
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2041232534}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.576, y: 0, z: -0.172}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
