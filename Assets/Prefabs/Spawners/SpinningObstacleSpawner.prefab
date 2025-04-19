@@ -45,6 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDistance: 1
-  rotationSpeed: 1000
+  rotationSpeed: 500
   obstaclePrefab: {fileID: 2850440528988781667, guid: 4dcfbfa7ffde1304181ad81529675a77,
     type: 3}
