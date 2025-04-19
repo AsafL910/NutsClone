@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class Branch : MonoBehaviour
 {
-    public Rigidbody rb;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -12,7 +10,7 @@ public class Branch : MonoBehaviour
 
     void Update()
     {
-        rb.velocity = Vector3.down * GameManager.Instance.climbSpeed;
+        transform.position += Vector3.down * GameManager.Instance.climbSpeed * Time.deltaTime;
     }
 
     private void OnTriggerEnter(Collider other)

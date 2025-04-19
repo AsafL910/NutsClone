@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8076393539173099680}
   - component: {fileID: 8076393539173099683}
   m_Layer: 0
-  m_Name: DefaultSpawner
+  m_Name: MovingSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,12 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adffcc7ab0cf28b44a6f939fc3f2ed36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDistance: 3
+  spawnDistance: 4
   rotationSpeed: 0
   branchPrefabs:
-  - {fileID: 77457895928501687, guid: b652c3575a2bee7488e70518d41af3c4, type: 3}
-  - {fileID: 77457895928501687, guid: b652c3575a2bee7488e70518d41af3c4, type: 3}
-  - {fileID: 77457895928501687, guid: b652c3575a2bee7488e70518d41af3c4, type: 3}
-  - {fileID: 2850440528988781667, guid: 8cb1a024531be2a4e99432fd72fa47c3, type: 3}
-  - {fileID: 7645227085584917808, guid: 46a264cbeefec914f9055e498c3a9885, type: 3}
-  - {fileID: 7793857843936637033, guid: 48f3e5a3410843b4889e399935dfa06e, type: 3}
+  - {fileID: 2850440528988781667, guid: a44ecf9efc9102c4ea3797e5216c61aa, type: 3}
+  - {fileID: 7645227085584917808, guid: 9d4af01956ff1914ba332860aa1f2586, type: 3}
