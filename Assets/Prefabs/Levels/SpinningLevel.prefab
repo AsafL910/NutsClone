@@ -49,3 +49,4 @@ MonoBehaviour:
     type: 3}
   coinSpawner: {fileID: 8134782992012860712, guid: 5ce0136e42a101543b78ccfbef27ddcd,
     type: 3}
+  levelGapDistance: 1

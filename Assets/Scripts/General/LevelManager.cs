@@ -16,6 +16,7 @@ public class LevelManager : MonoBehaviour
 
         if (levelDistanceTraveled > currentLevel.totalDistance) {
             Level newLevel = levels[Random.Range(0,levels.Length)];
+            
             while (currentLevel.name.Contains(newLevel.name)) {
                 newLevel = levels[Random.Range(0,levels.Length)];
             }
