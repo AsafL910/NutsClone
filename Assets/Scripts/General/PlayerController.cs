@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -12,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public GameManager gameManager;
 
     public float rotationSmoothing = 10f;
+    public Vector3 movementRotationModifier = Vector3.one;
     
     void Start()
     {
@@ -25,7 +27,8 @@ public class PlayerController : MonoBehaviour
 
         transform.RotateAround(tree.transform.position,Vector3.up, Time.deltaTime * turningSpeed * -input);
         transform.LookAt(tree.transform);
-        Quaternion target = transform.rotation * Quaternion.Euler(0,0, -input * rotationSpeed);
+        float rotationAmount = -input * rotationSpeed;
+        Quaternion target = transform.rotation * Quaternion.Euler(Mathf.Abs(rotationAmount) * movementRotationModifier.x ,rotationAmount * movementRotationModifier.y, rotationAmount * movementRotationModifier.z);
         transform.rotation = Quaternion.Lerp(transform.rotation,target, rotationSmoothing * Time.deltaTime);
     }
 
