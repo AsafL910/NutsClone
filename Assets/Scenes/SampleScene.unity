@@ -123,6 +123,77 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &302603422
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 1292704896}
+    m_Modifications:
+    - target: {fileID: 4694323825359833793, guid: 727e355a0aee1a849920204ea6702e79,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694323825359833793, guid: 727e355a0aee1a849920204ea6702e79,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694323825359833793, guid: 727e355a0aee1a849920204ea6702e79,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694323825359833793, guid: 727e355a0aee1a849920204ea6702e79,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694323825359833793, guid: 727e355a0aee1a849920204ea6702e79,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.70710677
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694323825359833793, guid: 727e355a0aee1a849920204ea6702e79,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.70710677
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694323825359833793, guid: 727e355a0aee1a849920204ea6702e79,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694323825359833793, guid: 727e355a0aee1a849920204ea6702e79,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694323825359833793, guid: 727e355a0aee1a849920204ea6702e79,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694323825359833793, guid: 727e355a0aee1a849920204ea6702e79,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694323825359833793, guid: 727e355a0aee1a849920204ea6702e79,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5363301212282785915, guid: 727e355a0aee1a849920204ea6702e79,
+        type: 3}
+      propertyPath: m_Name
+      value: Hurricane_spaceship_SRP_N01_01
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: 727e355a0aee1a849920204ea6702e79, type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,9 +685,10 @@ MonoBehaviour:
   rb: {fileID: 1292704891}
   tree: {fileID: 1596211872}
   turningSpeed: 200
-  rotationSpeed: 70
+  rotationSpeed: 30
   gameManager: {fileID: 1113466061}
   rotationSmoothing: 100
+  movementRotationModifier: {x: -0.2, y: 1.5, z: 0.5}
 --- !u!23 &1292704894
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -624,7 +696,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1292704890}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -676,9 +748,10 @@ Transform:
   m_GameObject: {fileID: 1292704890}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.56, y: 0, z: -0.304}
-  m_LocalScale: {x: 0.1, y: 0.3, z: 0.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 1962982893}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -693,8 +766,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.65, y: 0.8, z: 0.27}
+  m_Center: {x: 0, y: 0, z: -0.1}
 --- !u!1 &1596211872
 GameObject:
   m_ObjectHideFlags: 0
@@ -793,3 +866,9 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!4 &1962982893 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4694323825359833793, guid: 727e355a0aee1a849920204ea6702e79,
+    type: 3}
+  m_PrefabInstance: {fileID: 302603422}
+  m_PrefabAsset: {fileID: 0}
