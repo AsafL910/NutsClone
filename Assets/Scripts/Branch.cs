@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Branch : MonoBehaviour
+public class Branch : Despawn
 {
     // Start is called before the first frame update
     void Start()
@@ -13,12 +13,10 @@ public class Branch : MonoBehaviour
         transform.position += Vector3.down * GameManager.Instance.climbSpeed * Time.deltaTime;
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected override void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Despawn"))
-        {
-            Destroy(gameObject);
-        }
+        base.OnTriggerEnter(other);
+        
         if (other.CompareTag("Player"))
         {
             //Play destroy animation
