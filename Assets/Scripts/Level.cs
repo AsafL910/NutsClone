@@ -5,7 +5,7 @@ public class Level : MonoBehaviour
 {
     public float totalDistance;
     public Spawner obstacleSpawner;
-    public Spawner coinSpawner;
+    public Spawner coinSpawner = null;
     public float levelGapDistance = 5f;
     void Start()
     {
@@ -16,6 +16,8 @@ public class Level : MonoBehaviour
     {
         yield return new WaitForSeconds(levelGapDistance / GameManager.Instance.climbSpeed);
         Instantiate(obstacleSpawner.gameObject, transform);
-        Instantiate(coinSpawner.gameObject, transform);
+        if (coinSpawner != null) {
+            Instantiate(coinSpawner.gameObject, transform);
+        }
     }
 }
