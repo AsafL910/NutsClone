@@ -50,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isRandomDirection: 1
   rotationSpeed: {x: 50, y: 0, z: 0}
+  direction: 1
 --- !u!114 &-6320730965226580275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,6 +63,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 426445a06b02c3047a21d2abdc5e1dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  despawnTime: 10
 --- !u!1 &4745174421393571097
 GameObject:
   m_ObjectHideFlags: 0

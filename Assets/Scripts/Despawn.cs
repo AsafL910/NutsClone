@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Despawn : MonoBehaviour
 {
-    [SerializeField] private float despawnTime = 5f;
+    [SerializeField] private float despawnTime = 10f;
 
     protected virtual void Start()
     {
