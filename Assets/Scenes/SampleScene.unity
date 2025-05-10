@@ -230,7 +230,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &229256707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -464,12 +464,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 781387421}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.0625, z: 0}
+  m_LocalPosition: {x: 0, y: 2.543304, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1113466062}
-  m_RootOrder: -1
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &997252531
 PrefabInstance:
@@ -698,11 +698,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHp: 3
   totalCoins: 0
+  isPaused: 0
   climbSpeed: 1
   speedIncreaseRate: 0.1
   maxClimbSpeed: 5
   totalDistance: 0
-  levelManager: {fileID: 781387422}
 --- !u!4 &1113466062
 Transform:
   m_ObjectHideFlags: 0
@@ -714,8 +714,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 2.480804, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 781387423}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

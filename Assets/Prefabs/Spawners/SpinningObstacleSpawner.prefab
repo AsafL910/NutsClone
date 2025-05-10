@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDistance: 1
-  rotationSpeed: 40
+  rotationSpeed: 30
   coinPrefab: {fileID: 1811269357327169621, guid: 89471e20b9fa359499af2089e2e628c8,
     type: 3}
   obstaclePrefab: {fileID: 2850440528988781667, guid: 4dcfbfa7ffde1304181ad81529675a77,

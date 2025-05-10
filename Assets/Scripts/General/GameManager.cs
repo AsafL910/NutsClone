@@ -26,6 +26,17 @@ public class GameManager : MonoBehaviour
     public float maxClimbSpeed = 5f;
     public float totalDistance = 0f;
 
+    public void Pause()
+    {
+        isPaused = true;
+        Time.timeScale = 0f;
+    }
+    public void UnPause()
+    {
+        isPaused = false;
+        Time.timeScale = 1f;
+    }
+    
     void Start()
     {
 

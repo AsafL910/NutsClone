@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseUI : MonoBehaviour
 {
@@ -7,9 +8,24 @@ public class PauseUI : MonoBehaviour
 
     private Rect windowRect;
 
+    public Button pauseButton;
+
+    void Start()
+    {
+        pauseButton.onClick.AddListener(HandlePause);
+    }
+
+    void HandlePause()
+    {
+        GameManager.Instance.Pause();
+        pauseButton.gameObject.SetActive(false);
+    }
+
     void OnGUI()
     {
-        if (!GameManager.Instance.isPaused) return;
+        if (!GameManager.Instance.isPaused) {
+            return;
+        }
 
         GUI.skin = guiSkin;
 
@@ -31,12 +47,13 @@ public class PauseUI : MonoBehaviour
         float margin = windowRect.height * 0.03f;
 
         if (GUI.Button(new Rect((windowRect.width - btnWidth) / 2, margin * 10, btnWidth, btnHeight), "Resume")) {
-            GameManager.Instance.isPaused = false;
-            Time.timeScale = 1f;
+            pauseButton.gameObject.SetActive(true);
+            GameManager.Instance.UnPause();
         }
 
         if (GUI.Button(new Rect((windowRect.width - btnWidth) / 2, margin * 11 + btnHeight, btnWidth, btnHeight), "Restart")) {
-            Time.timeScale = 1f;
+            pauseButton.gameObject.SetActive(true);
+            GameManager.Instance.UnPause();
             GameManager.Instance.Restart();
         }
 

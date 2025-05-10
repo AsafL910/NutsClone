@@ -13,7 +13,7 @@ public class SpinningBranchSpawner : CoinSpawner
 
     void Update()
     {
-        transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime * direction);
+        transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime * direction  * GameManager.Instance.climbSpeed);
     }
 
     protected override IEnumerator SpawnLoop()
