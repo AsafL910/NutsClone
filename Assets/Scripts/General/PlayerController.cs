@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
 
     public GameObject tree;
-    public GameObject explosion;
     public float turningSpeed = 400f;
     [Tooltip("Max rotation to each side in degrees")]
     public float rotationSpeed = 70f;
@@ -38,7 +37,6 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Branch"))
         {
             //play hurt animation and sound
-            Instantiate(explosion, transform);
             gameManager.playerHp--;
         }
     }

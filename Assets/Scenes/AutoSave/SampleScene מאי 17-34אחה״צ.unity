@@ -725,8 +725,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1292704891}
   tree: {fileID: 1596211872}
-  explosion: {fileID: 4526918572856575594, guid: 96cc2fa0645f65a4a9d2ac286471e438,
-    type: 3}
   turningSpeed: 200
   rotationSpeed: 30
   gameManager: {fileID: 1113466061}

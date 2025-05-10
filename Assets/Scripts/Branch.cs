@@ -2,12 +2,7 @@ using UnityEngine;
 
 public class Branch : Despawn
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    public GameObject explosion;
     void Update()
     {
         transform.position += Vector3.down * GameManager.Instance.climbSpeed * Time.deltaTime;
@@ -16,10 +11,11 @@ public class Branch : Despawn
     protected override void OnTriggerEnter(Collider other)
     {
         base.OnTriggerEnter(other);
-        
+
         if (other.CompareTag("Player"))
         {
             //Play destroy animation
+            Instantiate(explosion, other.transform);
             GameManager.Instance.climbSpeed /= 2;
             Destroy(gameObject);
         }
