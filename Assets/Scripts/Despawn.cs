@@ -12,6 +12,7 @@ public class Despawn : MonoBehaviour
     {
         if (other.CompareTag("Despawn"))
         {
+            Debug.Log("Destroyed branch because of collision");
             Destroy(gameObject);
         }
     }
