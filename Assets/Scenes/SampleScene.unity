@@ -657,7 +657,7 @@ MonoBehaviour:
   isPaused: 0
   climbSpeed: 1
   speedIncreaseRate: 0.1
-  maxClimbSpeed: 5
+  maxClimbSpeed: 6
   totalDistance: 0
 --- !u!4 &1113466062
 Transform:
@@ -688,6 +688,7 @@ GameObject:
   - component: {fileID: 1292704892}
   - component: {fileID: 1292704891}
   - component: {fileID: 1292704897}
+  - component: {fileID: 1292704898}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -725,13 +726,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1292704891}
   tree: {fileID: 1596211872}
-  explosion: {fileID: 4526918572856575594, guid: 96cc2fa0645f65a4a9d2ac286471e438,
-    type: 3}
+  invincibilityAfterHitInSeconds: 1
   turningSpeed: 200
   rotationSpeed: 30
   gameManager: {fileID: 1113466061}
   rotationSmoothing: 100
   movementRotationModifier: {x: -0.2, y: 1.5, z: 0.5}
+  animator: {fileID: 1936413523}
 --- !u!23 &1292704894
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -751,8 +752,7 @@ MeshRenderer:
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: db3a3defaa1135a47a2cdca8b94d535a, type: 2}
+  m_Materials: []
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -811,6 +811,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.65, y: 0.8, z: 0.27}
   m_Center: {x: 0, y: 0, z: -0.1}
+--- !u!95 &1292704898
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292704890}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 31f817dfede7d6245933c5a44c6e9432, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1394363618
 GameObject:
   m_ObjectHideFlags: 0
@@ -1471,3 +1491,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1936413522 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2094433904932597994, guid: 493e1e0629969e34dae49bb3c352ceb6,
+    type: 3}
+  m_PrefabInstance: {fileID: 997252531}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1936413523
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1936413522}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 31f817dfede7d6245933c5a44c6e9432, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

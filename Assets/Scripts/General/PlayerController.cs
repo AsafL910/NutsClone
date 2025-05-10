@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -7,6 +8,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
 
     public GameObject tree;
+
+    public float invincibilityAfterHitInSeconds = 1f;
     public float turningSpeed = 400f;
     [Tooltip("Max rotation to each side in degrees")]
     public float rotationSpeed = 70f;
@@ -14,7 +17,7 @@ public class PlayerController : MonoBehaviour
 
     public float rotationSmoothing = 10f;
     public Vector3 movementRotationModifier = Vector3.one;
-
+    public Animator animator;
     void Start()
     {
         rb.constraints = RigidbodyConstraints.FreezeRotation;
@@ -37,7 +40,15 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Branch"))
         {
             //play hurt animation and sound
+            animator.SetBool("isPlayerHit", true);
             gameManager.playerHp--;
+            StartCoroutine(ResetHitAnimation());
         }
+    }
+
+    private IEnumerator ResetHitAnimation()
+    {
+        yield return new WaitForSeconds(invincibilityAfterHitInSeconds);
+        animator.SetBool("isPlayerHit", false);
     }
 }
